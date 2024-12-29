@@ -1,0 +1,36 @@
+To solve the unexpected behavior of the `calc()` function, you can try one of the following solutions:
+
+1. Avoid using percentages and other units together within the `calc()` function. For example, instead of writing:
+
+```css
+.element { 
+  width: calc(50% - 10px); 
+}
+```
+
+You can write:
+
+```css
+.element { 
+  width: 50%; 
+  margin-right: 10px; 
+}
+```
+
+2. Avoid using nested `calc()` functions. For example, instead of writing:
+
+```css
+.element { 
+  width: calc(calc(50% - 10px) + 20px); 
+}
+```
+
+You can write:
+
+```css
+.element { 
+  width: calc(50% + 10px); 
+}
+```
+
+3. Use a JavaScript library to handle complex calculations. This is usually not recommended, and often a clear indicator that your CSS is too complex and should be refactored.
