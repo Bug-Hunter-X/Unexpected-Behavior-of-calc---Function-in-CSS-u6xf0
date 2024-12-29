@@ -1,0 +1,19 @@
+The CSS code has an unexpected behavior when using the `calc()` function with percentages and other units. For example, the following code will not work as expected:
+
+```css
+.element { 
+  width: calc(50% - 10px); 
+}
+```
+
+The expected behavior is that the element's width should be 50% of its parent's width minus 10 pixels. However, the actual behavior is that the element's width is 50% of its parent's width, and then 10 pixels are subtracted from that value. This can lead to unexpected layout issues.
+
+Another example where there might be issues is when dealing with nested `calc()` functions. Suppose you have a CSS rule like this:
+
+```css
+.element { 
+  width: calc(calc(50% - 10px) + 20px); 
+}
+```
+
+In this case, the result might be unexpected because the nested `calc()` functions might not be evaluated correctly.
